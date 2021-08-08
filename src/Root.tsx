@@ -1,7 +1,10 @@
+import { GlobalStyle } from 'styles/globalStyle';
+
 export function Root() {
   return (
-    <div>
+    <>
+      <GlobalStyle />
       <h1>SIEMA</h1>
-    </div>
+    </>
   );
 }
