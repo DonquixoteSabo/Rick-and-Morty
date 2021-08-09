@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useQuery } from 'react-query';
 
-// import { Wrapper, Title } from './Header.styles';
+import { Wrapper, Button } from './Category.styles';
 
 const getCategories = async () => {
   const response = await fetch('https://rickandmortyapi.com/api');
@@ -20,11 +20,11 @@ function Categories() {
   }, [data]);
 
   return (
-    <>
+    <Wrapper>
       {categories.map((category) => (
-        <h1 key={category}>{category}</h1>
+        <Button key={category}>{category}</Button>
       ))}
-    </>
+    </Wrapper>
   );
 }
 
