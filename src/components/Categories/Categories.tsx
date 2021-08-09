@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useQuery } from 'react-query';
 
-import { Wrapper, Button } from './Category.styles';
+import { Wrapper, Button } from './Categories.styles';
 
 const getCategories = async () => {
   const response = await fetch('https://rickandmortyapi.com/api');

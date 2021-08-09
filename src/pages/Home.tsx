@@ -1,4 +1,4 @@
-import { Categories } from 'components/Categories/Category';
+import { Categories } from 'components/Categories/Categories';
 import { Header } from 'components/Header/Header';
 import { Wrapper } from './Home.styles';
 

@@ -16,4 +16,9 @@ export const Button = styled.button`
   border: none;
   background: rgb(158, 158, 158);
   color: white;
+  transition: ease 0.1s;
+  &:hover,
+  .active {
+    background: rgb(255, 152, 0);
+  }
 `;
