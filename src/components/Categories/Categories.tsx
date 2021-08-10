@@ -1,28 +1,17 @@
-import { useState, useEffect } from 'react';
-import { useQuery } from 'react-query';
-
+import { Link } from 'react-router-dom';
 import { Wrapper, Button } from './Categories.styles';
 
-const getCategories = async () => {
-  const response = await fetch('https://rickandmortyapi.com/api');
-  return response.json();
-};
+interface Props {
+  categories: string[];
+}
 
-function Categories() {
-  const [categories, setCategories] = useState<string[]>([]);
-  const { data } = useQuery('categories', getCategories);
-
-  useEffect(() => {
-    if (data) {
-      const keys = Object.keys(data);
-      setCategories(keys);
-    }
-  }, [data]);
-
+function Categories({ categories }: Props) {
   return (
     <Wrapper>
       {categories.map((category) => (
-        <Button key={category}>{category}</Button>
+        <Link to={`/${category}`}>
+          <Button>{category}</Button>
+        </Link>
       ))}
     </Wrapper>
   );
