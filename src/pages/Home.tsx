@@ -32,7 +32,9 @@ function Home() {
         />
         <Switch>
           {displayCategories.map(({ component, link }) => (
-            <Route path={`/${link}`}>{component}</Route>
+            <Route key={link} path={`/${link}`}>
+              {component}
+            </Route>
           ))}
           <Route path="/">
             <RandomCharacters />

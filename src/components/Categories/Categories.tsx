@@ -9,7 +9,7 @@ function Categories({ categories }: Props) {
   return (
     <Wrapper>
       {categories.map((category) => (
-        <Link to={`/${category}`}>
+        <Link key={category} to={`/${category}`}>
           <Button>{category}</Button>
         </Link>
       ))}
