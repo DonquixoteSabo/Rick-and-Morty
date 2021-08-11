@@ -15,7 +15,7 @@ const getCharacters = async (nums: number[]) => {
 function RandomCharacters() {
   const randomNumbers = getRandomNumbers();
   const { isLoading, data, isSuccess, isError } = useQuery<Character[]>(
-    'randomCharacters',
+    ['randomCharacters'],
     () => getCharacters(randomNumbers)
   );
   console.log(data);

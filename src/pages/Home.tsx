@@ -3,10 +3,10 @@ import { Header } from 'components/Header/Header';
 import { Wrapper } from './Home.styles';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { RandomCharacters } from 'components/RandomCharacters/RandomCharacters';
-import { Episodes } from 'components/Episodes/Episodes';
-import { Characters } from 'components/Characters/Characters';
-import { Locations } from 'components/Locations/Locations';
+import { RandomCharacters } from 'routes/RandomCharacters/RandomCharacters';
+import { Episodes } from 'routes/Episodes/Episodes';
+import { Characters } from 'routes/Characters/Characters';
+import { Locations } from 'routes/Locations/Locations';
 
 const displayCategories = [
   {
