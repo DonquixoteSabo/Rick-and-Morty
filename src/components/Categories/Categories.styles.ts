@@ -1,24 +1,26 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.ul`
   margin-top: 3em;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+  color: rgb(158, 158, 158);
 `;
 
-export const Button = styled.button`
-  width: 30%;
-  min-width: 300px;
-  padding: 1em;
+export const Typography = styled.li`
+  list-style: none;
   margin: 1em;
-  outline: none;
-  border: none;
-  background: rgb(158, 158, 158);
-  color: white;
   transition: ease 0.1s;
+  font-size: 1.4rem;
+  font-weight: 500;
   &:hover,
   .active {
-    background: rgb(255, 152, 0);
+    color: rgb(255, 152, 0);
   }
+`;
+
+export const Link = styled(NavLink)`
+  text-decoration: none;
+  color: inherit;
 `;

@@ -27,9 +27,6 @@ function Home() {
     <Router>
       <Wrapper>
         <Header />
-        {/* <Categories
-          categories={displayCategories.map((category) => category.link)}
-        /> */}
         <Switch>
           {displayCategories.map(({ component, link }) => (
             <Route key={link} path={`/${link}`}>
@@ -40,6 +37,9 @@ function Home() {
             <RandomCharacters />
           </Route>
         </Switch>
+        <Categories
+          categories={displayCategories.map((category) => category.link)}
+        />
       </Wrapper>
     </Router>
   );

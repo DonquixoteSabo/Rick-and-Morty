@@ -5,7 +5,9 @@ import { Wrapper, Title } from './Header.styles';
 function Header() {
   return (
     <Wrapper>
-      <Title>The Rick and Morty</Title>
+      <Title exact to="/">
+        The Rick and Morty
+      </Title>
     </Wrapper>
   );
 }
