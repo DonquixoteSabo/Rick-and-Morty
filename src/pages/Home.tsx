@@ -27,9 +27,9 @@ function Home() {
     <Router>
       <Wrapper>
         <Header />
-        <Categories
+        {/* <Categories
           categories={displayCategories.map((category) => category.link)}
-        />
+        /> */}
         <Switch>
           {displayCategories.map(({ component, link }) => (
             <Route key={link} path={`/${link}`}>
