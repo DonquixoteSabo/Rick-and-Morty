@@ -3,22 +3,22 @@ import { Header } from 'components/Header/Header';
 import { Wrapper } from './Home.styles';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { RandomCharacters } from 'routes/RandomCharacters/RandomCharacters';
-import { Episodes } from 'routes/Episodes/Episodes';
-import { Characters } from 'routes/Characters/Characters';
-import { Locations } from 'routes/Locations/Locations';
+import { RandomCharacters } from 'components/RandomCharacters/RandomCharacters';
+import { Episodes } from 'components/Episodes/Episodes';
+import { Characters } from 'components/Characters/Characters';
+import { Locations } from 'components/Locations/Locations';
 
 const displayCategories = [
   {
-    component: Characters,
+    component: <Characters />,
     link: 'characters',
   },
   {
-    component: Locations,
+    component: <Locations />,
     link: 'locations',
   },
   {
-    component: Episodes,
+    component: <Episodes />,
     link: 'episodes',
   },
 ];
