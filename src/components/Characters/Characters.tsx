@@ -16,6 +16,7 @@ interface Query {
   info: {
     next: string;
     prev: string;
+    pages: number;
   };
   results: Character[];
 }
@@ -26,6 +27,7 @@ function Characters() {
     ['characters', page],
     () => getCharacters(page)
   );
+  const maxPages = data?.info.pages || 1;
   console.log(data);
   return (
     <div>
@@ -39,7 +41,7 @@ function Characters() {
               <SingleCharacter key={character.id} {...character} />
             ))}
           </CharactersWrapper>
-          <Pagination page={page} setPage={setPage} />
+          <Pagination page={page} setPage={setPage} pages={maxPages} />
         </>
       )}
     </div>
