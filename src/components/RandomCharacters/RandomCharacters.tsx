@@ -3,7 +3,7 @@ import { Character } from 'types/Character';
 import { getRandomNumbers } from 'helpers/getRandomNumbers';
 import { useQuery } from 'react-query';
 import { SingleCharacter } from 'components/SingleCharacter/SingleCharacter';
-import { CharactersWrapper } from 'components/CharactersWrapper/CharactersWrapper';
+import { CharactersWrapper } from 'components/styledComponents/CharactersWrapper';
 
 const getCharacters = async (nums: number[]) => {
   const response = await fetch(

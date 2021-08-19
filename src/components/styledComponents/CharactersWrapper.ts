@@ -5,5 +5,5 @@ export const CharactersWrapper = styled.section`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 5em 1em;
+  padding: 0 1em 1em;
 `;
