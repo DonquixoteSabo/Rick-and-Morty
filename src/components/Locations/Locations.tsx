@@ -1,19 +1,9 @@
 import React, { useState } from 'react';
 import { Query } from 'types/Query';
 import { useQuery } from 'react-query';
-import styled from 'styled-components';
+import { List, Item } from 'components/styledComponents/List';
 import { Title } from 'components/styledComponents/Title';
 import { Pagination } from 'components/Pagination/Pagination';
-export const Wrapper = styled.ul`
-  color: white;
-  font-size: 1.1rem;
-  text-align: center;
-  list-style: none;
-`;
-
-export const Item = styled.li`
-  margin: 0.5em 0;
-`;
 interface Location {
   id: number;
   name: string;
@@ -52,11 +42,11 @@ export function Locations() {
       )}
       {isSuccess && data && (
         <>
-          <Wrapper>
+          <List>
             {data.results.map(({ id, name }) => (
               <Item key={id}>{name}</Item>
             ))}
-          </Wrapper>
+          </List>
           <Pagination
             page={page}
             setPage={setPage}
