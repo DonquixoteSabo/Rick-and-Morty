@@ -1,8 +1,9 @@
 import { Character } from 'types/Character';
 
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-export const Card = styled.article`
+export const Card = styled(Link)`
   width: clamp(400px, 40%, 500px);
   height: 200px;
   display: flex;
@@ -12,6 +13,11 @@ export const Card = styled.article`
   margin: 0.75rem;
   box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px,
     rgb(0 0 0 / 6%) 0px 2px 4px -1px;
+  text-decoration: none;
+  transition: 0.5s ease-in-out;
+  &:hover {
+    box-shadow: #f08d49 2px 2px 2px -1px;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -50,9 +56,10 @@ function SingleCharacter({
   species,
   location,
   origin,
+  id,
 }: Character) {
   return (
-    <Card>
+    <Card to={`characters/${id}`}>
       <ImageContainer>
         <Image src={image} />
       </ImageContainer>

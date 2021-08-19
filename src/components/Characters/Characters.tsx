@@ -6,6 +6,8 @@ import { useQuery } from 'react-query';
 import { Character } from 'types/Character';
 import { Query } from 'types/Query';
 import { Title } from 'components/styledComponents/Title';
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
+import { CharacterPage } from 'components/CharacterPage/CharacterPage';
 const getCharacters = async (page: number) => {
   const response = await fetch(
     `https://rickandmortyapi.com/api/character/?page=${page}`
@@ -26,28 +28,34 @@ function Characters() {
   );
 
   const maxPages = data?.info.pages || 1;
-  console.log(data);
-
+  let match = useRouteMatch();
   return (
     <div>
       <Title>Characters</Title>
-      {isLoading && <h1>Loading...</h1>}
-      {isError && <h1>Sorry, but we couldn't load data for you</h1>}
-      {isSuccess && data && (
-        <>
-          <CharactersWrapper>
-            {data.results.map((character) => (
-              <SingleCharacter key={character.id} {...character} />
-            ))}
-          </CharactersWrapper>
-          <Pagination
-            page={page}
-            setPage={setPage}
-            pages={maxPages}
-            topScroll={500}
-          />
-        </>
-      )}
+      <Switch>
+        <Route path={`${match.path}/:id`}>
+          <CharacterPage />
+        </Route>
+        <Route path={match.path}>
+          {isLoading && <h1>Loading...</h1>}
+          {isError && <h1>Sorry, but we couldn't load data for you</h1>}
+          {isSuccess && data && (
+            <>
+              <CharactersWrapper>
+                {data.results.map((character) => (
+                  <SingleCharacter key={character.id} {...character} />
+                ))}
+              </CharactersWrapper>
+              <Pagination
+                page={page}
+                setPage={setPage}
+                pages={maxPages}
+                topScroll={500}
+              />
+            </>
+          )}
+        </Route>
+      </Switch>
     </div>
   );
 }

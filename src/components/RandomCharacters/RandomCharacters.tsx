@@ -18,7 +18,6 @@ function RandomCharacters() {
     ['randomCharacters'],
     () => getCharacters(randomNumbers)
   );
-  console.log(data);
 
   return (
     <>
