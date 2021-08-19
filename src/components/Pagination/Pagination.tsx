@@ -19,16 +19,19 @@ interface Props {
   page: number;
   setPage: (page: number) => void;
   pages: number;
+  topScroll: number;
 }
 
-function Pagination({ page, setPage, pages }: Props) {
+function Pagination({ page, setPage, pages, topScroll }: Props) {
   const goToPrevPage = () => setPage(page - 1);
   const goToNextPage = () => setPage(page + 1);
   const goToFirstPage = () => setPage(1);
   const goToLastPage = () => setPage(pages);
+
   useEffect(() => {
-    window.scrollTo({ behavior: 'smooth', top: 500 });
+    window.scrollTo({ behavior: 'smooth', top: topScroll });
   }, [page]);
+
   return (
     <Wrapper>
       <Button disabled={page === 1} onClick={goToFirstPage}>
