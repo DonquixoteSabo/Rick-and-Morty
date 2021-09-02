@@ -7,7 +7,7 @@ import { Character } from 'types/Character';
 import { Query } from 'types/Query';
 import { Title } from 'components/styledComponents/Title';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
-import { CharacterPage } from 'components/CharacterPage/CharacterPage';
+import { CharacterPage } from 'pages/CharacterPage/CharacterPage';
 const getCharacters = async (page: number) => {
   const response = await fetch(
     `https://rickandmortyapi.com/api/character/?page=${page}`
@@ -31,7 +31,6 @@ function Characters() {
   let match = useRouteMatch();
   return (
     <div>
-      <Title>Characters</Title>
       <Switch>
         <Route path={`${match.path}/:id`}>
           <CharacterPage />
@@ -41,6 +40,7 @@ function Characters() {
           {isError && <h1>Sorry, but we couldn't load data for you</h1>}
           {isSuccess && data && (
             <>
+              <Title>Characters</Title>
               <CharactersWrapper>
                 {data.results.map((character) => (
                   <SingleCharacter key={character.id} {...character} />
