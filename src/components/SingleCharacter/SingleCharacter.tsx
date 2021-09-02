@@ -2,7 +2,7 @@ import { Character } from 'types/Character';
 
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
+import { Status } from 'components/styledComponents/Status';
 export const Card = styled(Link)`
   width: clamp(400px, 40%, 500px);
   height: 200px;
@@ -28,10 +28,6 @@ export const ImageContainer = styled.div`
 export const Image = styled.img`
   width: 100%;
   height: 100%;
-`;
-
-export const Status = styled.div`
-  font-size: 0.8rem;
 `;
 
 export const CardBody = styled.div`
@@ -66,7 +62,7 @@ function SingleCharacter({
       <CardBody>
         <div>
           <header>{name}</header>
-          <Status>
+          <Status status={status}>
             {status} - {species}
           </Status>
         </div>
