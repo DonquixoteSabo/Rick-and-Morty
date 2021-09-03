@@ -4,13 +4,6 @@ import { useQuery } from 'react-query';
 import { List, Item } from 'components/styledComponents/List';
 import { Title } from 'components/styledComponents/Title';
 import { Pagination } from 'components/Pagination/Pagination';
-interface Location {
-  id: number;
-  name: string;
-  type: string;
-  dimenstion: string;
-  residentals: string[];
-}
 
 const getLocations = async (page: number) => {
   const response = await fetch(
@@ -18,6 +11,13 @@ const getLocations = async (page: number) => {
   );
   return response.json();
 };
+interface Location {
+  id: number;
+  name: string;
+  type: string;
+  dimenstion: string;
+  residentals: string[];
+}
 
 interface LocationQuery extends Query {
   results: Location[];

@@ -1,12 +1,11 @@
 import { useParams } from 'react-router-dom';
 import { useQuery } from 'react-query';
-import { Character } from 'types/Character';
-import styled from 'styled-components';
+
 import { Status } from 'components/styledComponents/Status';
 import { Title } from 'components/styledComponents/Title';
-interface Params {
-  id: string;
-}
+
+import { Character } from 'types/Character';
+import { Wrapper } from './CharacterPage.styles';
 
 const getCharacter = async (id: string) => {
   const response = await fetch(
@@ -14,26 +13,9 @@ const getCharacter = async (id: string) => {
   );
   return response.json();
 };
-const Wrapper = styled.article`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: rgb(255, 255, 255);
-  font-size: 22px;
-  .img-container {
-    width: 329px;
-    margin-bottom: 1em;
-  }
-  .information {
-    color: gray;
-    font-size: 0.9rem;
-  }
-  img {
-    width: 100%;
-    height: 100%;
-  }
-`;
+interface Params {
+  id: string;
+}
 
 export function CharacterPage() {
   const { id } = useParams<Params>();
@@ -41,6 +23,7 @@ export function CharacterPage() {
     ['characters', id],
     () => getCharacter(id)
   );
+
   return (
     <>
       {isLoading && <h1>Loading...</h1>}

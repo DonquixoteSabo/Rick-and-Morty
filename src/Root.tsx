@@ -1,6 +1,8 @@
-import { GlobalStyle } from 'styles/globalStyle';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { Home } from 'pages/Home';
+
+import { Home } from 'pages/Home/Home';
+
+import { GlobalStyle } from 'styles/globalStyle';
 
 const queryClient = new QueryClient();
 

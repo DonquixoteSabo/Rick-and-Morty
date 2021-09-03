@@ -1,9 +1,10 @@
-// import { Wrapper, Button } from './Categories.styles';
-import { Character } from 'types/Character';
-import { getRandomNumbers } from 'helpers/getRandomNumbers';
 import { useQuery } from 'react-query';
+
 import { SingleCharacter } from 'components/SingleCharacter/SingleCharacter';
 import { CharactersWrapper } from 'components/styledComponents/CharactersWrapper';
+
+import { Character } from 'types/Character';
+import { getRandomNumbers } from 'helpers/getRandomNumbers';
 
 const getCharacters = async (nums: number[]) => {
   const response = await fetch(

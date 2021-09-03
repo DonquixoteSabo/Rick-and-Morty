@@ -1,19 +1,6 @@
-import React, { useEffect } from 'react';
-import styled from 'styled-components';
+import { useEffect } from 'react';
 
-export const Wrapper = styled.section`
-  display: flex;
-  justify-content: center;
-`;
-
-export const Button = styled.button`
-  padding: 1em;
-  border: 1px solid rgb(158, 158, 158);
-  color: rgb(158, 158, 158);
-  background: transparent;
-  outline: none;
-  font-size: 1rem;
-`;
+import { Wrapper, Button } from './Pagination.styles';
 
 interface Props {
   page: number;
@@ -30,7 +17,7 @@ function Pagination({ page, setPage, pages, topScroll }: Props) {
 
   useEffect(() => {
     window.scrollTo({ behavior: 'smooth', top: topScroll });
-  }, [page]);
+  }, [page, topScroll]);
 
   return (
     <Wrapper>

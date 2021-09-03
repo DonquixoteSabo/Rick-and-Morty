@@ -1,13 +1,16 @@
+import { useState } from 'react';
+import { useQuery } from 'react-query';
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
+
 import { CharactersWrapper } from 'components/styledComponents/CharactersWrapper';
 import { Pagination } from 'components/Pagination/Pagination';
 import { SingleCharacter } from 'components/SingleCharacter/SingleCharacter';
-import React, { useState } from 'react';
-import { useQuery } from 'react-query';
+import { Title } from 'components/styledComponents/Title';
+
+import { CharacterPage } from 'pages/CharacterPage/CharacterPage';
 import { Character } from 'types/Character';
 import { Query } from 'types/Query';
-import { Title } from 'components/styledComponents/Title';
-import { Switch, Route, useRouteMatch } from 'react-router-dom';
-import { CharacterPage } from 'pages/CharacterPage/CharacterPage';
+
 const getCharacters = async (page: number) => {
   const response = await fetch(
     `https://rickandmortyapi.com/api/character/?page=${page}`
@@ -21,14 +24,14 @@ interface CharecterQuery extends Query {
 
 function Characters() {
   const [page, setPage] = useState(1);
+  let match = useRouteMatch();
 
   const { isLoading, isError, isSuccess, data } = useQuery<CharecterQuery>(
     ['characters', page],
     () => getCharacters(page)
   );
-
   const maxPages = data?.info.pages || 1;
-  let match = useRouteMatch();
+
   return (
     <div>
       <Switch>
