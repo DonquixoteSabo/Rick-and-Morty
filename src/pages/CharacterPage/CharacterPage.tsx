@@ -5,7 +5,12 @@ import { Status } from 'components/styledComponents/Status';
 import { Title } from 'components/styledComponents/Title';
 
 import { Character } from 'types/Character';
-import { Wrapper } from './CharacterPage.styles';
+import {
+  Wrapper,
+  LeftArrow,
+  Container,
+  StyledLink,
+} from './CharacterPage.styles';
 
 const getCharacter = async (id: string) => {
   const response = await fetch(
@@ -13,6 +18,7 @@ const getCharacter = async (id: string) => {
   );
   return response.json();
 };
+
 interface Params {
   id: string;
 }
@@ -29,7 +35,10 @@ export function CharacterPage() {
       {isLoading && <h1>Loading...</h1>}
       {isError && <h1>Sorry, but we couldn't load data for you</h1>}
       {isSuccess && data && (
-        <>
+        <Container>
+          <StyledLink to="/characters">
+            <LeftArrow />
+          </StyledLink>
           <Title>{data.name}</Title>
           <Wrapper>
             <div className="img-container">
@@ -61,7 +70,7 @@ export function CharacterPage() {
               {data.type}
             </p>
           </Wrapper>
-        </>
+        </Container>
       )}
     </>
   );
