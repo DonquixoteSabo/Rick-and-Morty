@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const Wrapper = styled.header`
-  background: white;
+  background: url('https://i.imgur.com/easQdbn.png') white center;
+  background-size: cover;
   padding: 200px;
   text-align: center;
 
