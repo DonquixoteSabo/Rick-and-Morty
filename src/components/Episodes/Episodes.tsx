@@ -4,6 +4,8 @@ import { useQuery } from 'react-query';
 import { List, Item } from 'components/styledComponents/List';
 import { Title } from 'components/styledComponents/Title';
 import { Pagination } from 'components/Pagination/Pagination';
+import Spinner from '../Spinner/Spinner';
+
 interface Episode {
   id: number;
   name: string;
@@ -33,7 +35,7 @@ export function Episodes() {
   return (
     <div>
       <Title>Episode</Title>
-      {isLoading && <h1>Loading...</h1>}
+      {isLoading && <Spinner />}
       {isError && (
         <h1>
           Sorry, but we couldn't load data for you. Please refresh the page

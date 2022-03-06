@@ -5,6 +5,7 @@ import { CharactersWrapper } from 'components/styledComponents/CharactersWrapper
 
 import { Character } from 'types/Character';
 import { getRandomNumbers } from 'helpers/getRandomNumbers';
+import Spinner from '../Spinner/Spinner';
 
 const getCharacters = async (nums: number[]) => {
   const response = await fetch(
@@ -23,7 +24,7 @@ function RandomCharacters() {
   return (
     <>
       {isError && <h1>Sorry but we couldn't load data for you</h1>}
-      {isLoading && <h1>Loading...</h1>}
+      {isLoading && <Spinner />}
       {isSuccess && (
         <CharactersWrapper>
           {data!.map((character: Character) => (

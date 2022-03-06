@@ -4,6 +4,7 @@ import { useQuery } from 'react-query';
 import { List, Item } from 'components/styledComponents/List';
 import { Title } from 'components/styledComponents/Title';
 import { Pagination } from 'components/Pagination/Pagination';
+import Spinner from '../Spinner/Spinner';
 
 const getLocations = async (page: number) => {
   const response = await fetch(
@@ -11,6 +12,7 @@ const getLocations = async (page: number) => {
   );
   return response.json();
 };
+
 interface Location {
   id: number;
   name: string;
@@ -34,7 +36,7 @@ export function Locations() {
   return (
     <div>
       <Title>Locations</Title>
-      {isLoading && <h1>Loading...</h1>}
+      {isLoading && <Spinner />}
       {isError && (
         <h1>
           Sorry, but we couldn't load data for you. Please refresh the page

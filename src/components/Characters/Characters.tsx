@@ -10,6 +10,7 @@ import { Title } from 'components/styledComponents/Title';
 import { CharacterPage } from 'pages/CharacterPage/CharacterPage';
 import { Character } from 'types/Character';
 import { Query } from 'types/Query';
+import Spinner from '../Spinner/Spinner';
 
 const getCharacters = async (page: number) => {
   const response = await fetch(
@@ -39,7 +40,7 @@ function Characters() {
           <CharacterPage />
         </Route>
         <Route path={match.path}>
-          {isLoading && <h1>Loading...</h1>}
+          {isLoading && <Spinner />}
           {isError && <h1>Sorry, but we couldn't load data for you</h1>}
           {isSuccess && data && (
             <>
