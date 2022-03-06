@@ -6,7 +6,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://donquixotesabo.github.io/Weather-App/">
+    <a href="https://donquixotesabo.github.io/Rick-and-Morty/#/">
       Demo
     </a>
   </h3>
