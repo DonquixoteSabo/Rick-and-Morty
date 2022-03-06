@@ -7,6 +7,7 @@ import { RandomCharacters } from 'components/RandomCharacters/RandomCharacters';
 import { Episodes } from 'components/Episodes/Episodes';
 import { Characters } from 'components/Characters/Characters';
 import { Locations } from 'components/Locations/Locations';
+import Footer from '../../components/Footer/Footer';
 
 const displayCategories = [
   {
@@ -41,6 +42,7 @@ function Home() {
         <Categories
           categories={displayCategories.map((category) => category.link)}
         />
+        <Footer />
       </Wrapper>
     </Router>
   );
