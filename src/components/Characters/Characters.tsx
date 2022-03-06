@@ -18,7 +18,7 @@ const getCharacters = async (page: number) => {
   return response.json();
 };
 
-interface CharecterQuery extends Query {
+interface CharacterQuery extends Query {
   results: Character[];
 }
 
@@ -26,7 +26,7 @@ function Characters() {
   const [page, setPage] = useState(1);
   let match = useRouteMatch();
 
-  const { isLoading, isError, isSuccess, data } = useQuery<CharecterQuery>(
+  const { isLoading, isError, isSuccess, data } = useQuery<CharacterQuery>(
     ['characters', page],
     () => getCharacters(page)
   );
