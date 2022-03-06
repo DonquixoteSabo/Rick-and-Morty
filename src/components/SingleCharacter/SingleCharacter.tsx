@@ -18,7 +18,7 @@ function SingleCharacter({
   id,
 }: Character) {
   return (
-    <Card to={`characters/${id}`}>
+    <Card to={`/characters/${id}`}>
       <ImageContainer>
         <Image src={image} />
       </ImageContainer>

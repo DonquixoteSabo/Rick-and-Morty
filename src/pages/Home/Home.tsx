@@ -1,7 +1,7 @@
 import { Categories } from 'components/Categories/Categories';
 import { Header } from 'components/Header/Header';
 import { Wrapper } from './Home.styles';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { RandomCharacters } from 'components/RandomCharacters/RandomCharacters';
 import { Episodes } from 'components/Episodes/Episodes';
@@ -22,9 +22,10 @@ const displayCategories = [
     link: 'episodes',
   },
 ];
+
 function Home() {
   return (
-    <Router>
+    <Router basename="/Rick-and-Morty">
       <Wrapper>
         <Header />
         <Switch>
