@@ -11,6 +11,7 @@ import {
   Container,
   StyledLink,
 } from './CharacterPage.styles';
+import Spinner from '../../components/Spinner/Spinner';
 
 const getCharacter = async (id: string) => {
   const response = await fetch(
@@ -32,7 +33,7 @@ export function CharacterPage() {
 
   return (
     <>
-      {isLoading && <h1>Loading...</h1>}
+      {isLoading && <Spinner />}
       {isError && <h1>Sorry, but we couldn't load data for you</h1>}
       {isSuccess && data && (
         <Container>
