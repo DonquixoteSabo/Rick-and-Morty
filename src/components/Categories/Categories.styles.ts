@@ -6,6 +6,7 @@ export const Wrapper = styled.ul`
   display: flex;
   justify-content: center;
   color: rgb(158, 158, 158);
+  flex-wrap: wrap;
 `;
 
 export const Typography = styled.li`
@@ -14,6 +15,7 @@ export const Typography = styled.li`
   transition: ease 0.1s;
   font-size: 1.4rem;
   font-weight: 500;
+
   &:hover,
   .active {
     color: rgb(255, 152, 0);

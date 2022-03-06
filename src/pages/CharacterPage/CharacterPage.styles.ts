@@ -6,11 +6,11 @@ export const Wrapper = styled.article`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: rgb(255, 255, 255);
   font-size: 22px;
+  color: rgb(255, 255, 255);
 
   .img-container {
-    width: 329px;
+    max-width: 329px;
     margin-bottom: 1em;
   }
 
