@@ -6,7 +6,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://donquixotesabo.github.io/Rick-and-Morty/#/">
+    <a href="https://kamil-budzik.github.io/Rick-and-Morty/#/">
       Demo
     </a>
   </h3>
