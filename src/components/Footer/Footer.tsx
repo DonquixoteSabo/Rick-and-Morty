@@ -7,9 +7,9 @@ const Footer = () => {
     <Wrapper>
       <header>
         {'<>'} by{' '}
-        <a href="https://github.com/DonquixoteSabo">Kamil Budzik 2022</a>
+        <a href="https://github.com/Kamil-Budzik">Kamil Budzik 2022</a>
       </header>
-      <a href="https://github.com/DonquixoteSabo/Rick-and-Morty">
+      <a href="https://github.com/Kamil-Budzik/Rick-and-Morty">
         Code on github
       </a>
       <br />
