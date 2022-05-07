@@ -71,4 +71,4 @@ $ npm start
 
 <!-- will be add in the future after buying domain -->
 
-- Portfolio [Kamil Budzik](https://github.com/DonquixoteSabo/)
+- Portfolio [Kamil Budzik](https://kamil-budzik.com/)
